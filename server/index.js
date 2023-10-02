@@ -8,18 +8,16 @@ const app = express();
 const Authentication = require('./controller/Authetication.js');
 const AuthRoute = require('./controller/AuthRoute.js')
 
-// app.use(cookieSession(
-//     {
-//         name:"session",
-//         keys:["lama"],
-//         maxAge:24*60*60*100
-//     } 
-// ));
-// app.use(passport.initialize());
-// app.use(passport.session());
+
 
 app.use(express.json()); // Middleware to parse JSON data
 app.use(express.urlencoded({ extended: true })); // Middleware to parse form data
+
+app.use(cookieSession({
+    name: 'session',
+    keys: ['your-secret-key'],
+    maxAge: 24 * 60 * 60 * 1000, // 24 hours
+  }));
 
 app.use(cors(
     {
