@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: true })); // Middleware to parse form dat
 
 app.use(cors(
     {
-        origin:"http://localhost:3000",
+        origin:"https://xerocodee-task-ae1rbdhlx-piyushs-projects-1ae0757a.vercel.app/",
         methods:"GET,POST,PUT,DELETE",
         credentials:true
 

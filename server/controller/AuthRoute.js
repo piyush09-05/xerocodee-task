@@ -17,7 +17,7 @@ router.get('/logout', (req,res) => {
           console.error("error destroying the session");
        }
        else{
-        res.redirect("http://localhost:3000")
+        res.redirect("https://xerocodee-task-ae1rbdhlx-piyushs-projects-1ae0757a.vercel.app/")
        }
     })
     
@@ -25,7 +25,7 @@ router.get('/logout', (req,res) => {
 router.get("/auth/google", passport.authenticate("google", {scope: ["profile"]}));
 
 router.get("/auth/google/callback", passport.authenticate("google", {
-    successRedirect:"http://localhost:3000/dashboard/piyush/piyush@mail.com",
+    successRedirect:"https://xerocodee-task-ae1rbdhlx-piyushs-projects-1ae0757a.vercel.app/dashboard/piyush/piyush@mail.com",
     failureRedirect:"/login/failed"
 }))
 
