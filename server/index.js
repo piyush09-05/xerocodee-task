@@ -19,15 +19,12 @@ app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000, // 24 hours
   }));
 
-app.use(cors(
-    {
-        origin:"https://xerocodee-task-git-main-piyushs-projects-1ae0757a.vercel.app",
-        methods:"GET,POST,PUT,DELETE",
-        credentials:true
-
-    }
-)); 
-
+  const corsOptions = {
+    origin: 'https://xero-code-client.vercel.app',
+    credentials: true,
+    optionSuccessStatus: 200,
+  };
+  app.use(cors(corsOptions));
 
 
 app.use(Authentication);
